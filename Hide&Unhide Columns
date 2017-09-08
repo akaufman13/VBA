@@ -1,0 +1,51 @@
+Sub Hide_allFilterCols()
+    ActiveSheet.Columns("D:D").EntireColumn.Select
+    Selection.EntireColumn.Hidden = True
+    ActiveSheet.Columns("J:J").EntireColumn.Select
+    Selection.EntireColumn.Hidden = True
+    ActiveSheet.Columns("L:L").EntireColumn.Select
+    Selection.EntireColumn.Hidden = True
+    ActiveSheet.Columns("P:P").EntireColumn.Select
+    Selection.EntireColumn.Hidden = True
+    ActiveSheet.Columns("R:R").EntireColumn.Select
+    Selection.EntireColumn.Hidden = True
+    ActiveSheet.Columns("T:T").EntireColumn.Select
+    Selection.EntireColumn.Hidden = True
+    ActiveSheet.Columns("V:V").EntireColumn.Select
+    Selection.EntireColumn.Hidden = True
+    ActiveSheet.Columns("AH:AH").EntireColumn.Select
+    Selection.EntireColumn.Hidden = True
+    ActiveSheet.Columns("AJ:AJ").EntireColumn.Select
+    Selection.EntireColumn.Hidden = True
+    ActiveSheet.Columns("AL:AL").EntireColumn.Select
+    Selection.EntireColumn.Hidden = True
+    With Application.WorksheetFunction
+    Cells(.CountA(Columns("B:B")) + 1, 1).Select
+End With
+End Sub
+
+Sub UnhideFilterColumns()
+    ActiveSheet.Columns("D:D").EntireColumn.Select
+    Selection.EntireColumn.Hidden = False
+    ActiveSheet.Columns("J:J").EntireColumn.Select
+    Selection.EntireColumn.Hidden = False
+    ActiveSheet.Columns("L:L").EntireColumn.Select
+    Selection.EntireColumn.Hidden = False
+    ActiveSheet.Columns("P:P").EntireColumn.Select
+    Selection.EntireColumn.Hidden = False
+    ActiveSheet.Columns("R:R").EntireColumn.Select
+    Selection.EntireColumn.Hidden = False
+    ActiveSheet.Columns("T:T").EntireColumn.Select
+    Selection.EntireColumn.Hidden = False
+    ActiveSheet.Columns("V:V").EntireColumn.Select
+    Selection.EntireColumn.Hidden = False
+    ActiveSheet.Columns("AH:AH").EntireColumn.Select
+    Selection.EntireColumn.Hidden = False
+    ActiveSheet.Columns("AJ:AJ").EntireColumn.Select
+    Selection.EntireColumn.Hidden = False
+    ActiveSheet.Columns("AL:AL").EntireColumn.Select
+    Selection.EntireColumn.Hidden = False
+    With Application.WorksheetFunction
+    Cells(.CountA(Columns("B:B")) + 1, 1).Select
+End With
+End Sub
