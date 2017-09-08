@@ -9,3 +9,49 @@ Sub Qtr_Macro()
         "=CHOOSE(MONTH('Investigation GRID'!IncidentDateFilter),3,3,3,4,4,4,1,1,1,2,2,2)"
     ActiveCell.Offset(0, 1).Range("A1").Select
 End Sub
+
+Sub NumFIDinv_Macro()
+ ActiveCell.FormulaR1C1 = _
+        "=IFERROR(VLOOKUP('Investigation GRID'!FacilityID,'PIVOT TABLE FOR DATA'!C[-13]:C[-12],2,FALSE),""N/A"")"
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    End Sub
+    Sub CAP_Macro()
+
+ Sub CAP_Macro() 
+    ActiveCell.Select
+    ActiveCell.FormulaR1C1 = "=IF('Investigation GRID'!CAPNotification=""Not Required"",""N/A"","""")"
+    ActiveCell.Offset(0, 1).Range("A1").Select
+End Sub
+
+Sub Critical_Macro()
+    ActiveCell.Select
+    ActiveCell.FormulaR1C1 = _
+        "=IF(OR('Investigation GRID'!Program=""FBH"", 'Investigation GRID'!InvestigationOversight=""OPWDD"", 'Investigation GRID'!InvestigationOversight=""QI"", 'Investigation GRID'!InvestigationOversight=""ACS""),""N/A"",""REQUIRED"")"
+    ActiveCell.Offset(0, 1).Range("A1").Select
+End Sub
+
+Sub DeterminationNot_Macro()
+    ActiveCell.Select
+    ActiveCell.FormulaR1C1 = _
+        "=IF(OR('Investigation GRID'!Status=""OPEN INVESTIGATION"", 'Investigation GRID'!Status=""OPEN INTERNAL"", 'Investigation GRID'!Status=""OPEN ADD INFO""),""Pending"","""")"
+    ActiveCell.Offset(0, 2).Range("A1").Select
+End Sub
+
+Sub substantiatedAllegationCat_Macro()
+    ActiveCell.FormulaR1C1 = _
+        "=IF(OR('Investigation GRID'!InvestigationOversight=""ACS"", 'Investigation GRID'!InvestigationOversight=""OPWDD"", 'Investigation GRID'!InvestigationOversight=""QI""),""N/A"","""")"
+    ActiveCell.Offset(0, 1).Range("A1").Select
+End Sub
+
+Sub DaysforCompletion_Macro()
+    ActiveCell.Select
+    ActiveCell.FormulaR1C1 = _
+        "=IF(AND('Investigation GRID'!DateDetermNot=""MISSING"",'Investigation GRID'!DateDeterm=""MISSING""),""Unable to Determine"",IF(OR('Investigation GRID'!Status=""OPEN INVESTIGATION"",'Investigation GRID'!Status=""OPEN ADD INFO"", 'Investigation GRID'!Status=""OPEN INTERNAL""),""Pending"", IFERROR(DAYS('Investigation GRID'!DateDeterm,'Investigation GRID'!DateNotif),(DAYS('Investigation GRID'!DateDeterm,'Investigation GRID'!DateIncident)))))"
+    ActiveCell.Offset(0, 2).Range("A1").Select
+End Sub
+
+Sub sub_indicated_Report_Formula()
+    ActiveCell.FormulaR1C1 = _
+        "=IF(OR('Investigation GRID'!FacilityID=""Birth Parent"",'Investigation GRID'!Relationship=""Birth Parent"",'Investigation GRID'!Relationship=""Birth Parent Trial Discharge"", 'Investigation GRID'!FacilityID=""Birth Parent Trial Discharge"",'Investigation GRID'!Status=""OPEN INTERNAL"", 'Investigation GRID'!Status=""OPEN ADD INFO"",'Investigation GRID'!Status=""CLOSED UNSUBSTANTIATED INTERNAL"", 'Investigation GRID'!Status=""CLOSED ADD INFO"", 'Investigation GRID'!Status=""CLOSED UNSUBSTANTIATED INVESTIGATION"",'Investigation GRID'!Status=""CLOSED SUBSTANTIATED INTERNAL"", 'Investigation GRID'!Status=""CLOSED INTERNAL""),""N/A"","""")"
+    ActiveCell.Offset(0, 1).Range("A1").Select
+End Sub
