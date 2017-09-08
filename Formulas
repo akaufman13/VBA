@@ -1,0 +1,5 @@
+Sub FY_Macro()
+    ActiveCell.FormulaR1C1 = _
+        "=YEAR('Investigation GRID'!IncidentDateFilter)+(MONTH('Investigation GRID'!IncidentDateFilter)>=7)"
+    ActiveCell.Offset(0, 1).Range("A1").Select
+End Sub
