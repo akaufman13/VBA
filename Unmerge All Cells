@@ -1,0 +1,11 @@
+Sub Unmerge()
+ Dim r As Range, rMgArea As Range
+
+ For Each r In ActiveSheet.UsedRange
+ If r.MergeArea.Cells.Count > 1 Then
+ Set rMgArea = r.MergeArea
+ r.UnMerge
+rMgArea.Value = r.Value
+ End If
+ Next
+ End Sub
