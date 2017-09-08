@@ -3,3 +3,9 @@ Sub FY_Macro()
         "=YEAR('Investigation GRID'!IncidentDateFilter)+(MONTH('Investigation GRID'!IncidentDateFilter)>=7)"
     ActiveCell.Offset(0, 1).Range("A1").Select
 End Sub
+
+Sub Qtr_Macro()
+  ActiveCell.FormulaR1C1 = _
+        "=CHOOSE(MONTH('Investigation GRID'!IncidentDateFilter),3,3,3,4,4,4,1,1,1,2,2,2)"
+    ActiveCell.Offset(0, 1).Range("A1").Select
+End Sub
